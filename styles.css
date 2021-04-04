@@ -39,6 +39,12 @@ main{
     border: 10px solid white;
     border-radius: 25px;
     box-shadow: 0 10px 40px rgb(221, 215, 215);
+    transition-property: transform;
+    transition-duration: 1s;
+}
+
+.phone-body:hover {
+    transform: rotateY(180deg);
 }
 .phone-content{
     font-size: 10px; 
@@ -228,6 +234,7 @@ main{
         display: flex;
         align-items: center;
     }
+
     .bkg-shape{
         width: 600px;
         height: 900px;
@@ -235,18 +242,32 @@ main{
         top:-200px;
         left: -185px;
         border-radius: 0 0 350px 350px;
+        animation-name: shape;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes shape{
+        0% {opacity: 0}
+        100%{opacity: 1;} 
     }
     main{
         height: 100%;
         flex-direction: row;
         justify-content: center;
         /* align-items: center; */
-
     }
 
     .about{
         max-width: 460px;
         text-align: left;
         margin-left: 120px;
+        opacity: 0;
+        animation-name: about;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes about {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
     }
 }
